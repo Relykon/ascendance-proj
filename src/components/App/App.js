@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import { BrowserRouter, Route } from 'react-router-dom';
 // import { v4 } from 'uuid';
