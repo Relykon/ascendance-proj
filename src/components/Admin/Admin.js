@@ -8,18 +8,19 @@ class AdminPage extends Component {
 
         this.state = {
             loading: false,
-            users: [],
+            users: []
         };
     }
 
     componentDidMount() {
         this.setState({ loading: true });
+
         this.props.firebase.users().on('value', snapshot => {
             const usersObject = snapshot.val();
 
             const usersList = Object.keys(usersObject).map(key => ({
                 ...usersObject[key],
-                uid: key
+                uid: key,
             }));
 
             this.setState({
@@ -40,8 +41,8 @@ class AdminPage extends Component {
             <div>
                 <h1>Admin</h1>
 
-                {loading && <div>Loading ... </div>}
-
+                {loading && <div>Loading ...</div>}
+                <h3>Registered Users:</h3>
                 <UserList users={users} />
             </div>
         );
@@ -49,21 +50,23 @@ class AdminPage extends Component {
 }
 
 const UserList = ({ users }) => (
-    <ul>
+    <ol>
         {users.map(user => (
             <li key={user.uid}>
                 <span>
                     <strong>ID:</strong> {user.uid}
                 </span>
+                <br />
                 <span>
                     <strong>E-Mail:</strong> {user.email}
                 </span>
+                <br />
                 <span>
                     <strong>Username:</strong> {user.username}
                 </span>
             </li>
         ))}
-    </ul>
+    </ol>
 );
 
 export default withFirebase(AdminPage);

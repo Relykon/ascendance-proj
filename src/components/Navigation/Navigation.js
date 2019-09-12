@@ -48,9 +48,3 @@ const NavigationNonAuth = () => (
 );
 
 export default Navigation;
-
-    <ul>
-        <li>
-            <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
-        </li>
-    </ul>
