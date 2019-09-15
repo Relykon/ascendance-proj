@@ -11,6 +11,7 @@ import PasswordForgetPage from '../PasswordForget/PasswordForget';
 import HomePage from '../Home/Home';
 import AccountPage from '../Account/Account';
 import AdminPage from '../Admin/Admin';
+import ProjectForm from '../ProjectCreation/ProjectForm';
 
 import * as ROUTES from '../../constants/Routes';
 import { withAuthentication } from '../Session';
@@ -24,6 +25,7 @@ const App = () => (
         <Route exact path={ROUTES.LANDING} component={LandingPage} />
         <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
         <Route path={ROUTES.SIGN_IN} component={SignInPage} />
+        <Route path={ROUTES.PROJECT_CREATE} component={ProjectForm} />
         {/* <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} /> */}
         {/* <Route path={ROUTES.HOME} component={HomePage} /> */}
         {/* <Route path={ROUTES.ACCOUNT} component={AccountPage} /> */}
@@ -31,6 +33,6 @@ const App = () => (
       </div>
   </BrowserRouter>
 );
-  
+
 
 export default withAuthentication(App);
