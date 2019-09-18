@@ -5,12 +5,12 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Header from '../Header/Header';
 import Navigation from '../Navigation/Navigation';
 import LandingPage from '../Landing/Landing';
-import SignUpPage from '../SignUp/SignUp';
-import SignInPage from '../SignIn/SignIn';
+import SignUpPage from '../SignUp';
+import SignInPage from '../SignIn';
 import PasswordForgetPage from '../PasswordForget/PasswordForget';
 import HomePage from '../Home/Home';
 import AccountPage from '../Account/Account';
-import AdminPage from '../Admin/Admin';
+import AdminPage from '../Admin';
 
 import * as ROUTES from '../../constants/Routes';
 import { withAuthentication } from '../Session';
