@@ -49,6 +49,14 @@ class ProjectFormBase extends Component{
     this.setState({ [event.target.name]: event.target.value});
   }
 
+  onChangeCheckBox = event => {
+    if(event.target.checked){
+      this.setState({ [event.target.name]: "Yes"});
+    } else {
+      this.setState({ [event.target.name]: "No"});
+    }
+  }
+
   render() {
 
     const {project, desc, type, location, skillset, time, requirements, training, error} = this.state;
@@ -129,7 +137,7 @@ class ProjectFormBase extends Component{
           type="checkbox"
           name="training"
           value={training}
-          onChange={this.onChange}
+          onChange={this.onChangeCheckBox}
           />
 
         <button disabled={isInvalid} type="submit">
