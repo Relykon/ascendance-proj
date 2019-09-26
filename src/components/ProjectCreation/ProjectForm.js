@@ -57,6 +57,25 @@ class ProjectFormBase extends Component{
     }
   }
 
+  doReSize = event => {
+    var maxRows = 5;
+    var txt = event.target.value;
+    var cols = event.target.cols;
+
+    var arrText = txt.split('\n');
+    var rows = arrText.length;
+
+    for(let i = 0; i < arrText.length; i++){
+      rows += parseInt(arrText[i].length/cols);
+    }
+
+    if(rows > maxRows){
+      event.target.rows = maxRows;
+    }else{
+      event.target.rows = rows;
+    }
+  }
+
   render() {
 
     const {project, desc, type, location, skillset, time, requirements, training, error} = this.state;
@@ -74,12 +93,15 @@ class ProjectFormBase extends Component{
           />
 
         <p>Project Description</p>
-          <input
-          type="text"
+          <textarea
           name="desc"
           value={desc}
           onChange={this.onChange}
-          />
+          onKeyUp={this.doReSize}
+          cols="20"
+          rows="1"
+          >
+          </textarea>
 
         <p>Type of Project</p>
           <select name="type" value={type} onChange={this.onChange}>
