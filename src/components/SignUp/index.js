@@ -31,14 +31,14 @@ class SignUpFormBase extends Component {
     }
 
     onSubmit = event => {
-        const { username, email, password, isAdmin, isNonProfit } = this.state;
+        const { username, email, password, isAdmin, isNonprofit } = this.state;
         const roles = {};
     
         if (isAdmin) {
             roles[ROLES.ADMIN] = ROLES.ADMIN;
         }
 
-        if (isNonProfit) {
+        if (isNonprofit) {
             roles[ROLES.NONPROFIT] = ROLES.NONPROFIT;
         }
 
@@ -79,7 +79,7 @@ class SignUpFormBase extends Component {
             password,
             passwordConfirm,
             isAdmin,
-            isNonProfit,
+            isNonprofit,
             error,
         } = this.state;
 
@@ -98,6 +98,7 @@ class SignUpFormBase extends Component {
                     type="text"
                     placeholder="User Name"
                 />
+                <br/>
                 <input 
                     name="email"
                     value={email}
@@ -105,6 +106,7 @@ class SignUpFormBase extends Component {
                     type="text"
                     placeholder="Email Address"
                 />
+                <br/>
                 <input 
                     name="password"
                     value={password}
@@ -112,6 +114,7 @@ class SignUpFormBase extends Component {
                     type="password"
                     placeholder="Password"
                 />
+                <br/>
                 <input 
                     name="passwordConfirm"
                     value={passwordConfirm}
@@ -119,6 +122,7 @@ class SignUpFormBase extends Component {
                     type="password"
                     placeholder="Confirm Password"
                 />
+                <br/>
                 <label>
                     Admin:
                     <input
@@ -128,12 +132,13 @@ class SignUpFormBase extends Component {
                         onChange={this.onChangeCheckbox}
                     />
                 </label>
+                <br/>
                 <label>
                     Nonprofit:
                     <input
                         name="isNonprofit"
                         type="checkbox"
-                        checked={isNonProfit}
+                        checked={isNonprofit}
                         onChange={this.onChangeCheckbox}
                     />
                     {/* <input
@@ -144,6 +149,7 @@ class SignUpFormBase extends Component {
                         placeholder="Name of Organization"
                     /> */}
                 </label>
+                <br/>
                 <button disabled={isInvalid} type="submit">
                     Sign Up
                 </button>

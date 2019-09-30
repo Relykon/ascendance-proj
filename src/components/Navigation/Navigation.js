@@ -35,9 +35,11 @@ const NavigationAuth = ({ authUser }) => (
                 <Link to={ROUTES.ADMIN}>Admin</Link>
             </li>
         )}
-        <li>
-            <Link to={ROUTES.PROJECT_CREATE}>New Project</Link>
-        </li>
+        {!!authUser.roles[ROLES.NONPROFIT] && (
+            <li>
+                <Link to={ROUTES.PROJECT_CREATE}>New Project</Link>
+            </li>
+        )}
         <li>
             <SignOutButton />
         </li>
