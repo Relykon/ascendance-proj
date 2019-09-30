@@ -19,6 +19,7 @@ const INITIAL_STATE = {
     password: '',
     passwordConfirm: '',
     isAdmin: false,
+    isNonProfit: false,
     error: null,
 };
 
@@ -30,11 +31,15 @@ class SignUpFormBase extends Component {
     }
 
     onSubmit = event => {
-        const { username, email, password, isAdmin } = this.state;
+        const { username, email, password, isAdmin, isNonProfit } = this.state;
         const roles = {};
     
         if (isAdmin) {
             roles[ROLES.ADMIN] = ROLES.ADMIN;
+        }
+
+        if (isNonProfit) {
+            roles[ROLES.NONPROFIT] = ROLES.NONPROFIT;
         }
 
         this.props.firebase
@@ -74,6 +79,7 @@ class SignUpFormBase extends Component {
             password,
             passwordConfirm,
             isAdmin,
+            isNonProfit,
             error,
         } = this.state;
 
@@ -121,6 +127,22 @@ class SignUpFormBase extends Component {
                         checked={isAdmin}
                         onChange={this.onChangeCheckbox}
                     />
+                </label>
+                <label>
+                    Nonprofit:
+                    <input
+                        name="isNonprofit"
+                        type="checkbox"
+                        checked={isNonProfit}
+                        onChange={this.onChangeCheckbox}
+                    />
+                    {/* <input
+                        name="organization"
+                        value={organization}
+                        onChange={this.organization}
+                        type="text"
+                        placeholder="Name of Organization"
+                    /> */}
                 </label>
                 <button disabled={isInvalid} type="submit">
                     Sign Up
