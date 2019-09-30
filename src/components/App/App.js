@@ -10,12 +10,8 @@ import SignInPage from '../SignIn';
 import PasswordForgetPage from '../PasswordForget/PasswordForget';
 import HomePage from '../Home/Home';
 import AccountPage from '../Account/Account';
-<<<<<<< HEAD
-import AdminPage from '../Admin/Admin';
+import AdminPage from '../Admin/';
 import ProjectForm from '../ProjectCreation/ProjectForm';
-=======
-import AdminPage from '../Admin';
->>>>>>> merge
 
 import * as ROUTES from '../../constants/Routes';
 import { withAuthentication } from '../Session';
@@ -29,18 +25,11 @@ const App = () => (
         <Route exact path={ROUTES.LANDING} component={LandingPage} />
         <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
         <Route path={ROUTES.SIGN_IN} component={SignInPage} />
-<<<<<<< HEAD
         <Route path={ROUTES.PROJECT_CREATE} component={ProjectForm} />
-        {/* <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} /> */}
-        {/* <Route path={ROUTES.HOME} component={HomePage} /> */}
-        {/* <Route path={ROUTES.ACCOUNT} component={AccountPage} /> */}
-        {/* <Route path={ROUTES.ADMIN} component={AdminPage} /> */}
-=======
         <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} />
         <Route path={ROUTES.HOME} component={HomePage} />
         <Route path={ROUTES.ACCOUNT} component={AccountPage} />
         <Route path={ROUTES.ADMIN} component={AdminPage} />
->>>>>>> merge
       </div>
   </BrowserRouter>
 );
