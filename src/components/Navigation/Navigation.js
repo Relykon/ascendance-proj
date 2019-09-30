@@ -1,22 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import SignOutButton from '../SignOut/SignOut';
+import SignOutButton from '../SignOut';
 import * as ROUTES from '../../constants/Routes';
+import * as ROLES from '../../constants/Roles';
 
 import { AuthUserContext } from '../Session';
 
 const Navigation = () => (
-    <div>
-        <AuthUserContext.Consumer>
-            {authUser =>
-                authUser ? <NavigationAuth /> : <NavigationNonAuth />
-            }
-        </AuthUserContext.Consumer>
-    </div>
+    <AuthUserContext.Consumer>
+        {authUser =>
+            authUser ? (
+                <NavigationAuth authUser={authUser} />
+            ) : (
+                    <NavigationNonAuth />
+                )
+        }
+    </AuthUserContext.Consumer>
 );
 
-const NavigationAuth = () => (
+const NavigationAuth = ({ authUser }) => (
     <ul>
         <li>
             <Link to={ROUTES.LANDING}>Landing</Link>
@@ -27,6 +30,11 @@ const NavigationAuth = () => (
         <li>
             <Link to={ROUTES.ACCOUNT}>Account</Link>
         </li>
+        {!!authUser.roles[ROLES.ADMIN] && (
+            <li>
+                <Link to={ROUTES.ADMIN}>Admin</Link>
+            </li>
+        )}
         <li>
             <Link to={ROUTES.PROJECT_CREATE}>New Project</Link>
         </li>
@@ -48,12 +56,3 @@ const NavigationNonAuth = () => (
 );
 
 export default Navigation;
-
-    // <ul>
-    //     <li>
-    //         <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
-    //     </li>
-    //     <li>
-    //         <Link to={ROUTES.ADMIN}>Admin</Link>
-    //     </li>
-    // </ul>
