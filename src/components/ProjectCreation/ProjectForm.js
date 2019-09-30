@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+// import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
 
 import { withFirebase } from '../Firebase';
-import * as ROUTES from '../../constants/Routes';
+import { withAuthorization } from '../Session';
+import * as ROLES from '../../constants/Roles';
+// import * as ROUTES from '../../constants/Routes';
 
 const ProjectFormPage = () => (
   <div>
@@ -24,7 +26,7 @@ const INITIAL_STATE = {
   error: null
 };
 
-class ProjectFormBase extends Component{
+class ProjectCreateFormBase extends Component{
   constructor(props){
     super(props);
 
@@ -172,10 +174,13 @@ class ProjectFormBase extends Component{
   }
 }
 
+const condition = authUser =>
+  authUser && !!authUser.roles[ROLES.NONPROFIT];
+
 const ProjectForm = compose(
-  withRouter,
+  withAuthorization(condition),
   withFirebase
-)(ProjectFormBase);
+)(ProjectCreateFormBase);
 
 export default ProjectFormPage;
 
