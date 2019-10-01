@@ -28,6 +28,9 @@ const App = () => (
         <Route path={ROUTES.HOME} component={HomePage} />
         <Route path={ROUTES.ACCOUNT} component={AccountPage} />
         <Route path={ROUTES.ADMIN} component={AdminPage} />
+        <Route exact path='/projectPreview' component={ProjectPreview} />
+        <Route exact path='/projectPreview/edit/:id' component={ProjectDetails} />
+        <Route exact path='/projectPreview/:id' component={ProjectDetails} />
       </div>
   </BrowserRouter>
 );
