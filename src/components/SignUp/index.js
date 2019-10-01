@@ -4,6 +4,7 @@ import { compose } from 'recompose';
 
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/Routes';
+import * as ROLES from '../../constants/Roles';
 
 const SignUpPage = () => (
     <div>
@@ -17,6 +18,8 @@ const INITIAL_STATE = {
     email: '',
     password: '',
     passwordConfirm: '',
+    isAdmin: false,
+    isNonProfit: false,
     error: null,
 };
 
@@ -28,7 +31,16 @@ class SignUpFormBase extends Component {
     }
 
     onSubmit = event => {
-        const { username, email, password } = this.state;
+        const { username, email, password, isAdmin, isNonprofit } = this.state;
+        const roles = {};
+    
+        if (isAdmin) {
+            roles[ROLES.ADMIN] = ROLES.ADMIN;
+        }
+
+        if (isNonprofit) {
+            roles[ROLES.NONPROFIT] = ROLES.NONPROFIT;
+        }
 
         this.props.firebase
             .doCreateUserWithEmailAndPassword(email, password)
@@ -37,7 +49,8 @@ class SignUpFormBase extends Component {
                 .user(authUser.user.uid)
                 .set({
                     username,
-                    email
+                    email,
+                    roles
                 });
             })
             .then(() => {
@@ -55,12 +68,18 @@ class SignUpFormBase extends Component {
         this.setState({ [event.target.name]: event.target.value });
     };
 
+    onChangeCheckbox = event => {
+        this.setState({ [event.target.name]: event.target.checked });
+    };
+
     render() {
         const {
             username,
             email,
             password,
             passwordConfirm,
+            isAdmin,
+            isNonprofit,
             error,
         } = this.state;
 
@@ -79,6 +98,7 @@ class SignUpFormBase extends Component {
                     type="text"
                     placeholder="User Name"
                 />
+                <br/>
                 <input 
                     name="email"
                     value={email}
@@ -86,6 +106,7 @@ class SignUpFormBase extends Component {
                     type="text"
                     placeholder="Email Address"
                 />
+                <br/>
                 <input 
                     name="password"
                     value={password}
@@ -93,6 +114,7 @@ class SignUpFormBase extends Component {
                     type="password"
                     placeholder="Password"
                 />
+                <br/>
                 <input 
                     name="passwordConfirm"
                     value={passwordConfirm}
@@ -100,6 +122,34 @@ class SignUpFormBase extends Component {
                     type="password"
                     placeholder="Confirm Password"
                 />
+                <br/>
+                <label>
+                    Admin:
+                    <input
+                        name="isAdmin"
+                        type="checkbox"
+                        checked={isAdmin}
+                        onChange={this.onChangeCheckbox}
+                    />
+                </label>
+                <br/>
+                <label>
+                    Nonprofit:
+                    <input
+                        name="isNonprofit"
+                        type="checkbox"
+                        checked={isNonprofit}
+                        onChange={this.onChangeCheckbox}
+                    />
+                    {/* <input
+                        name="organization"
+                        value={organization}
+                        onChange={this.organization}
+                        type="text"
+                        placeholder="Name of Organization"
+                    /> */}
+                </label>
+                <br/>
                 <button disabled={isInvalid} type="submit">
                     Sign Up
                 </button>
@@ -112,7 +162,7 @@ class SignUpFormBase extends Component {
 
 const SignUpLink = () => (
     <p>
-        Don't have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
+        Don't have an account yet? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
     </p>
 );
 

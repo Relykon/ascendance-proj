@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import ProjectItem from './ProjectItem';
 import * as firebase from 'firebase';
 
-
 class ProjectsPreview extends Component {
     constructor() {
         super();
@@ -11,10 +10,8 @@ class ProjectsPreview extends Component {
     }
 }
 
-
 componentDidMount() {
     this.db = firebase.database();
-
     this.listenForChange();
 }
 
@@ -29,7 +26,7 @@ listenForChange() {
             skillset: snapshot.val().skillset,
             time: snapshot.val().time,
             requirements: snapshot.val().requirements,
-            training: snapshot.val().training                   
+            training: snapshot.val().training    
         }
 
         let projects = this.state.projects;
@@ -37,20 +34,17 @@ listenForChange() {
 
         this.setState({
             projects: projects
-        });
-        
-    });
-    
+        }); 
+    });   
 }
   
 render() {
-
     return (
-    <div>
-        <ProjectItem projects={this.state.projects} />
-    </div>       
-    )
+        <div>
+            <ProjectItem projects={this.state.projects} />
+        </div>       
+        )
     };      
 }
 
-    export default ProjectsPreview;
+export default ProjectsPreview;
