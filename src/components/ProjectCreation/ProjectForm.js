@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-// import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
 
 import { withFirebase } from '../Firebase';
 import { withAuthorization } from '../Session';
 import * as ROLES from '../../constants/Roles';
-// import * as ROUTES from '../../constants/Routes';
 
 const ProjectFormPage = () => (
   <div>
