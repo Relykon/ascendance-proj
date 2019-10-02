@@ -15,16 +15,13 @@ class ProjectDetails extends Component {
             requirements:'',
             training:''           
     }
-
         this.handleInputChange = this.handleInputChange.bind(this);
         this.onDelete = this.onDelete.bind(this);
-
     }
 
     componentWillMount(){
         this.getProjectDetails();
     }
-
 
     getProjectDetails(){
         let projectId = this.props.match.params.id
@@ -75,7 +72,6 @@ class ProjectDetails extends Component {
         e.preventDefault();
     }
 
-
     handleInputChange(e){
         const target = e.target;
         const value = target.value;
@@ -86,18 +82,14 @@ class ProjectDetails extends Component {
         });
     }
 
-
     onDelete(){
         let projectId = this.state.details.id;
         console.log('delete', projectId)
         axios.delete(`https://project-ascendance.firebaseio.com/projects/${this.state.key}.json`)
         .then(response => {
             this.props.history.push('/projectPreview');
-        })
-           
+        })    
     };
-
-        
 
    render() {
        return (

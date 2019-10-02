@@ -21,8 +21,7 @@ class ProjectItem extends Component {
                         -ms-flex-pack: justify;
                         justify-content: space-between;
                         position: relative;
-                        cursor: pointer;
-                        
+                        cursor: pointer;  
                     }
 
                     .card-box:hover {

@@ -11,7 +11,10 @@ import PasswordForgetPage from '../PasswordForget/PasswordForget';
 import HomePage from '../Home/Home';
 import AccountPage from '../Account/Account';
 import AdminPage from '../Admin/';
+// import Projects from '../ProjectCreation/Projects';
 import ProjectForm from '../ProjectCreation/ProjectForm';
+import ProjectPreview from '../ProjectPreview/ProjectPreview';
+import ProjectDetails from '../ProjectPreview/ProjectDetails';
 
 import * as ROUTES from '../../constants/Routes';
 import { withAuthentication } from '../Session';
@@ -30,12 +33,12 @@ const App = () => (
         <Route path={ROUTES.HOME} component={HomePage} />
         <Route path={ROUTES.ACCOUNT} component={AccountPage} />
         <Route path={ROUTES.ADMIN} component={AdminPage} />
-        <Route exact path='/projectPreview' component={ProjectPreview} />
+        {/* <Route path={ROUTES.PROJECTS} component={Projects} /> */}
+        <Route path={ROUTES.PROJECT_PREVIEW} component={ProjectPreview} />
         <Route exact path='/projectPreview/edit/:id' component={ProjectDetails} />
         <Route exact path='/projectPreview/:id' component={ProjectDetails} />
       </div>
   </BrowserRouter>
 );
-
 
 export default withAuthentication(App);

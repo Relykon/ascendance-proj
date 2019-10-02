@@ -46,6 +46,9 @@ const NavigationAuth = ({ authUser }) => (
             </li>
         )}
         <li>
+            <Link to={ROUTES.PROJECT_PREVIEW}>Project Preview</Link>
+        </li>
+        <li>
             <SignOutButton />
         </li>
     </ul>

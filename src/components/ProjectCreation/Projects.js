@@ -57,51 +57,29 @@ function Projects(props) {
 
         `}</style>
 
-
-
-
         <div class="container">
-        <div class="row">
-
-            <div class="col-md-4">
-                <div class="card-box">
-                    <div class="card-title">
-                        <h2>{props.project}</h2>
-                        <p>Project Type: {props.type}</p>
-                        <p>Location: {props.location}</p>
-                        <p>Skillset Require {props.skillset}</p>
-                        <p>Time Require {props.time}</p>
-                        <p>Requirements: {props.requirements}</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card-box">
+                        <div class="card-title">
+                            <h2>{props.project}</h2>
+                            <p>Project Type: {props.type}</p>
+                            <p>Location: {props.location}</p>
+                            <p>Skillset Require {props.skillset}</p>
+                            <p>Time Require {props.time}</p>
+                            <p>Requirements: {props.requirements}</p>
+                        </div>
                     </div>
-
-                </div>
-
                 </div>
             </div>
         </div>
-
-                </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    </div>
 
     return(
         <div>
             {projectsInformation}
         </div>
     );
-
 }
 
 Projects.propTypes = {
@@ -113,7 +91,6 @@ Projects.propTypes = {
     requirements: PropTypes.string.isRequired,
     currentRouterPath: PropTypes.func,
     projectsId: PropTypes.string.isRequired
-
 };
 
 export default Projects;
