@@ -35,8 +35,8 @@ const App = () => (
         <Route path={ROUTES.ADMIN} component={AdminPage} />
         {/* <Route path={ROUTES.PROJECTS} component={Projects} /> */}
         <Route path={ROUTES.PROJECT_PREVIEW} component={ProjectPreview} />
-        <Route exact path='/projectPreview/edit/:id' component={ProjectDetails} />
-        <Route exact path='/projectPreview/:id' component={ProjectDetails} />
+        {/* <Route exact path='/projectPreview/edit/:id' component={ProjectDetails} /> */}
+        <Route exact path='/projectDetails/:id' component={ProjectDetails} />
       </div>
   </BrowserRouter>
 );

@@ -75,7 +75,7 @@ class ProjectItem extends Component {
                                                 <p>Time Commitment Required: {project.time}</p>
                                                 <p>Requirements: {project.requirements}</p> 
                                                 <p>Training Required: {project.training}</p>
-                                                <Link to={`/projectPreview/${project.id}`}> Edit/Delete</Link>
+                                                <Link to={`/projectDetails/${project.id}`}> Edit/Delete</Link>
                                             </div>
                                         </div>
                                     ))}                 

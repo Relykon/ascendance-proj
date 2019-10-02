@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import * as ROUTES from '../../constants/Routes';
+
 class ProjectDetails extends Component {
     constructor(props) {
         super(props);
@@ -34,7 +36,8 @@ class ProjectDetails extends Component {
                 desc: response.data.desc,
                 type: response.data.type,
                 location: response.data.location,
-                skillset: response.data.skillset,         time: response.data.time,
+                skillset: response.data.skillset,         
+                time: response.data.time,
                 requirements: response.data.requirements,
                 training: response.data.training
             }, () =>  { 
@@ -51,7 +54,7 @@ class ProjectDetails extends Component {
         data: newProject
         })
         .then(response => { 
-            this.props.history.push('/projectPreview');
+            this.props.history.push(ROUTES.PROJECT_PREVIEW);
                
         })
          .catch(err => console.log(err));
@@ -87,7 +90,7 @@ class ProjectDetails extends Component {
         console.log('delete', projectId)
         axios.delete(`https://project-ascendance.firebaseio.com/projects/${this.state.key}.json`)
         .then(response => {
-            this.props.history.push('/projectPreview');
+            this.props.history.push(ROUTES.PROJECT_PREVIEW);
         })    
     };
 
