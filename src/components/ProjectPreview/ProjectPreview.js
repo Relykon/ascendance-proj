@@ -1,32 +1,50 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Projects from './../ProjectCreation/Projects';
+import React, { Component } from 'react';
+import ProjectItem from './ProjectItem';
+import * as firebase from 'firebase';
 
-function ProjectsList(props){
-
-    return(
-        <div>
-            {Object.keys(props.projectsList).map(function(projectsId) {
-            var projects = props.projectsList[projectsId];
-            return <Projects
-            project={projects.project}
-            type={projects.type}
-            location={projects.location}
-            skillset={projects.skillset}
-            time={projects.time}
-            requirements={projects.requirements}
-            currentRouterPath={props.currentRouterPath}
-            key={projectsId}
-            projectsId={projectsId}/>
-             })}
-        </div>
-    );
+class ProjectsPreview extends Component {
+    constructor() {
+        super();
+        this.state = {
+            projects: []
+    }
 }
 
-ProjectsList.propTypes = {
-    projectsList: PropTypes.object,
-    currentRouterPath: PropTypes.string
+componentDidMount() {
+    this.db = firebase.database();
+    this.listenForChange();
+}
 
-};
+listenForChange() {
+    this.db.ref('projects').on('child_added', snapshot => {
+        let project = {
+            id: snapshot.key,
+            project: snapshot.val().project,
+            desc: snapshot.val().desc,
+            type: snapshot.val().type,
+            location: snapshot.val().location, 
+            skillset: snapshot.val().skillset,
+            time: snapshot.val().time,
+            requirements: snapshot.val().requirements,
+            training: snapshot.val().training    
+        }
 
-export default ProjectsList;
+        let projects = this.state.projects;
+        projects.push(project);
+
+        this.setState({
+            projects: projects
+        }); 
+    });   
+}
+  
+render() {
+    return (
+        <div>
+            <ProjectItem projects={this.state.projects} />
+        </div>       
+        )
+    };      
+}
+
+export default ProjectsPreview;
