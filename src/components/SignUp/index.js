@@ -20,6 +20,7 @@ const INITIAL_STATE = {
     passwordConfirm: '',
     isAdmin: false,
     isNonProfit: false,
+    isVolunteer: false,
     error: null,
 };
 
@@ -31,15 +32,17 @@ class SignUpFormBase extends Component {
     }
 
     onSubmit = event => {
-        const { username, email, password, isAdmin, isNonprofit } = this.state;
+        const { username, email, password, isAdmin, isNonprofit, isVolunteer } = this.state;
         const roles = {};
     
         if (isAdmin) {
             roles[ROLES.ADMIN] = ROLES.ADMIN;
         }
-
         if (isNonprofit) {
             roles[ROLES.NONPROFIT] = ROLES.NONPROFIT;
+        }
+        if (isVolunteer) {
+            roles[ROLES.VOLUNTEER] = ROLES.VOLUNTEER;
         }
 
         this.props.firebase
@@ -80,6 +83,7 @@ class SignUpFormBase extends Component {
             passwordConfirm,
             isAdmin,
             isNonprofit,
+            isVolunteer,
             error,
         } = this.state;
 
@@ -87,7 +91,12 @@ class SignUpFormBase extends Component {
             password !== passwordConfirm ||
             password === '' ||
             email === '' ||
-            username === '';
+            username === '' ||
+            isAdmin === false && isNonprofit === false && isVolunteer === false ||
+            isAdmin === true && isNonprofit === true ||
+            isAdmin === true && isVolunteer === true ||
+            isVolunteer === true && isNonprofit === true;
+
 
         return (
             <form onSubmit={this.onSubmit}>
@@ -129,6 +138,15 @@ class SignUpFormBase extends Component {
                         name="isAdmin"
                         type="checkbox"
                         checked={isAdmin}
+                        onChange={this.onChangeCheckbox}
+                    />
+                </label>
+                <label>
+                    Volunteer:
+                    <input
+                        name="isVolunteer"
+                        type="checkbox"
+                        checked={isVolunteer}
                         onChange={this.onChangeCheckbox}
                     />
                 </label>
