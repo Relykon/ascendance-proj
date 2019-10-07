@@ -5,6 +5,7 @@ import { compose } from 'recompose';
 import { SignUpLink } from '../SignUp';
 import { PasswordForgetLink } from '../PasswordForget/PasswordForget';
 import { withFirebase } from '../Firebase';
+import './index.css';
 
 const SignInPage = () => (
     <div>
@@ -52,6 +53,12 @@ class SignInFormBase extends Component {
         const isInvalid = password === '' || email === '';
 
         return (
+            <div>
+                <div className="foto-container">
+                    <img src={require('../img/artemis.jpg')} alt=""/>
+                    </div>
+            
+
             <form onSubmit={this.onSubmit}>
                 <input
                     name="email"
@@ -73,6 +80,18 @@ class SignInFormBase extends Component {
 
                 {error && <p>{error.message}</p>}
             </form>
+
+
+
+
+
+
+
+
+
+
+            
+            </div>
         );
     }
 }
