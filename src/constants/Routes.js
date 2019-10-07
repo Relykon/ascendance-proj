@@ -7,3 +7,5 @@ export const ADMIN = '/admin';
 export const PASSWORD_FORGET = '/pw-forget';
 export const PROJECT_CREATE = '/proj-form';
 export const PROJECTS = '/projects';
+export const PROJECT_PREVIEW = '/projectPreview/:id';
+export const PROJECT_DETAILS = '/projectDetails/:id';

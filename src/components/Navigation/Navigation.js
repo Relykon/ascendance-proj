@@ -40,11 +40,14 @@ const NavigationAuth = ({ authUser }) => (
                 <Link to={ROUTES.PROJECT_CREATE}>New Project</Link>
             </li>
         )}
-        {!!authUser.roles[ROLES.NONPROFIT] && (
+        {/* {!!authUser.roles[ROLES.NONPROFIT] && (
             <li>
                 <Link to={ROUTES.PROJECTS}>View Projects</Link>
             </li>
-        )}
+        )} */}
+        <li>
+            <Link to={ROUTES.PROJECT_PREVIEW}>Project Preview</Link>
+        </li>
         <li>
             <SignOutButton />
         </li>
