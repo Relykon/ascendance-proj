@@ -9,7 +9,7 @@ import './index.css';
 
 const SignInPage = () => (
     <div>
-        <h1>SignIn</h1>
+        {/* <h1>SignIn</h1> */}
         <SignInForm />
         <PasswordForgetLink />
         <SignUpLink />
@@ -53,10 +53,13 @@ class SignInFormBase extends Component {
         const isInvalid = password === '' || email === '';
 
         return (
-            <div>
-                <div className="foto-container">
-                    <img src={require('../img/artemis.jpg')} alt=""/>
-                    </div>
+            <div id="signin-box">
+
+
+
+                    <div className="right">
+                        <h1>Sign In</h1>
+                   
             
 
             <form onSubmit={this.onSubmit}>
@@ -74,16 +77,19 @@ class SignInFormBase extends Component {
                     type="password"
                     placeholder="Password"
                 />
-                <button disabled={isInvalid} type="submit">
+                <button className="submit" disabled={isInvalid} type="submit">
                     Sign In
                 </button>
 
                 {error && <p>{error.message}</p>}
             </form>
+            </div>
 
 
 
-
+            <div class="left">
+    
+    </div>
 
 
 
