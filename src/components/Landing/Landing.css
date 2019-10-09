@@ -12,15 +12,17 @@
     background-repeat: no-repeat;
    }
 
-   h1 {
-       color: rgb(2, 2, 182);
-       text-align: center;
-   }
-
    .w3-container {
        padding: 50px;
        text-align: center;
+       margin: 100px;
+       padding-top: 150px;
    }
+
+   h1 {
+    color: rgb(2, 2, 182);
+    text-align: center;
+}
 
   .button {
     background-color: rgb(255, 255, 255);
