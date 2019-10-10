@@ -1,7 +1,112 @@
 body {
-    /* background: white; */
-}
+    margin: 0;
+    padding: 0;
+    background: #DDD;
+    font-size: 16px;
+    color: #222;
+    font-family:  sans-serif;
+    font-weight: 300;
+  }
+  
+  #signin-box {
+    position: relative;
+    margin: 10% auto;
+    width: 600px;
+    height: 400px;
+    background: #FFF;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  }
+  
+  .left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    padding: 40px;
+    width: 300px;
+    height: 400px;
+    background: url('../../assets/img/artemis.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  h1 {
+    margin: 0 0 20px 0;
+    font-weight: 300;
+    font-size: 28px;
+  }
+  
+  input {
+    display: block;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    padding: 4px;
+    width: 220px;
+    height: 32px;
+    border: none;
+    border-bottom: 1px solid #AAA;
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    transition: 0.2s ease;
+    border-radius: 0 2px 2px 0;
+  }
 
-.foto-container{
-    
-}
+  ::placeholder {
+      color: #0066FF;
+  }
+  
+  
+  .submit {
+    margin-top: 28px;
+    width: 120px;
+    height: 32px;
+    background: #87CEFA;
+    border: none;
+    border-radius: 2px;
+    color: #FFF;
+    font-family: sans-serif;
+    /* font-weight:; */
+    text-transform: uppercase;
+    transition: 0.1s ease;
+    cursor: pointer;
+  }
+  
+  .submit:hover,
+  .submit:focus {
+    opacity: 0.8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    transition: 0.1s ease;
+  }
+  
+  .submit {
+    opacity: 1;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    transition: 0.1s ease;
+  }
+  
+  
+  .right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-sizing: border-box;
+    padding: 40px;
+    width: 300px;
+    height: 400px;
+  }
+
+  h1 {
+      color: #000080;
+      font-family: ff-good-headline-web-pro-condensed;
+      font-style: normal;
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: .08em;
+      line-height: 1em;
+      position: relative;
+    }
+
+  
+  

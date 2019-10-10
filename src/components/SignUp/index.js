@@ -5,6 +5,7 @@ import { compose } from 'recompose';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/Routes';
 import * as ROLES from '../../constants/Roles';
+import './index.css';
 
 const SignUpPage = () => (
     <div>
@@ -180,8 +181,8 @@ class SignUpFormBase extends Component {
 }
 
 const SignUpLink = () => (
-    <p>
-        Don't have an account yet? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
+    <p id='signUpLink'>
+        Don't have an account yet?<br/> <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
     </p>
 );
 
