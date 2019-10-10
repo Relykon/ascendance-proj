@@ -141,6 +141,7 @@ class SignUpFormBase extends Component {
                         onChange={this.onChangeCheckbox}
                     />
                 </label>
+                <br />
                 <label>
                     Volunteer:
                     <input

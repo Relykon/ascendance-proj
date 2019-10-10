@@ -12,7 +12,7 @@ const HomePage = () => (
         <p>The Home Page is accessible by every signed in user.</p>
         
         
-        <img src={require('../img/adult-cheerful-collaboration-1391373.jpg')} alt=""/>
+        <img src={require('../../assets/img/adult-cheerful-collaboration-1391373.jpg')} alt=""/>
     </div>
 
     

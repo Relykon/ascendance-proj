@@ -55,7 +55,7 @@ class SignInFormBase extends Component {
         return (
             <div>
                 <div className="foto-container">
-                    <img src={require('../img/artemis.jpg')} alt=""/>
+                    <img src={require('../../assets/img/artemis.jpg')} alt=""/>
                     </div>
             
 

@@ -19,7 +19,6 @@ const Header = () => {
                 <li><a href="#recruit">Recruit Volunteers</a></li>
                 <li><a href="#about">Our Mission</a></li>
                 <li><a href="SignIn">Sign In</a></li>
-                
             </ul>
         </div>
         </nav>
