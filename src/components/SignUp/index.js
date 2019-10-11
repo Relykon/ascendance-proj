@@ -108,7 +108,7 @@ class SignUpFormBase extends Component {
                     type="text"
                     placeholder="User Name"
                 />
-                <br/>
+                {/* <br/> */}
                 <input 
                     name="email"
                     value={email}
@@ -116,7 +116,7 @@ class SignUpFormBase extends Component {
                     type="text"
                     placeholder="Email Address"
                 />
-                <br/>
+                {/* <br/> */}
                 <input 
                     name="password"
                     value={password}
@@ -124,7 +124,7 @@ class SignUpFormBase extends Component {
                     type="password"
                     placeholder="Password"
                 />
-                <br/>
+                {/* <br/> */}
                 <input 
                     name="passwordConfirm"
                     value={passwordConfirm}
@@ -132,8 +132,8 @@ class SignUpFormBase extends Component {
                     type="password"
                     placeholder="Confirm Password"
                 />
-                <br/>
-                <label>
+                
+                {/* <label>
                     Admin:
                     <input
                         name="isAdmin"
@@ -141,8 +141,8 @@ class SignUpFormBase extends Component {
                         checked={isAdmin}
                         onChange={this.onChangeCheckbox}
                     />
-                </label>
-                <br />
+                </label> */}
+                {/* <br /> */}
                 <label>
                     Volunteer:
                     <input
@@ -152,7 +152,7 @@ class SignUpFormBase extends Component {
                         onChange={this.onChangeCheckbox}
                     />
                 </label>
-                <br/>
+                {/* <br/> */}
                 <label>
                     Nonprofit:
                     <input
