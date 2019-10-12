@@ -9,13 +9,14 @@ body {
   }
   
   #signin-box {
-    position: relative;
+    position: sticky;
     margin: 10% auto;
     width: 600px;
     height: 400px;
     background: #FFF;
     border-radius: 2px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    z-index: -1;
   }
   
   .left {

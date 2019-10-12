@@ -6,14 +6,16 @@ import './Landing.css';
 const Landing = () => {
     return(
         <div>
-            <div class="background"></div>
-            <div className="w3-container">
+            <div className="background">
+            <div className="container">
             <h1>It counts to ...[mission or slogan here]</h1>
             <br></br>
             <button class="button">Be a volunter</button>
             <br></br>
             <button class="button">Find volunteers</button>
-            </div>     
+            </div>  
+            </div>
+               
         </div>
     )
 };
