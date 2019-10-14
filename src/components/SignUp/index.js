@@ -100,7 +100,7 @@ class SignUpFormBase extends Component {
 
 
         return (
-            <form onSubmit={this.onSubmit}>
+            <form id="signUpForm" onSubmit={this.onSubmit}>
                 <input 
                     name="username"
                     value={username}
@@ -170,11 +170,11 @@ class SignUpFormBase extends Component {
                     /> */}
                 </label>
                 <br/>
-                <button disabled={isInvalid} type="submit">
+                <button id="signUpBtn" disabled={isInvalid} type="submit">
                     Sign Up
                 </button>
-
-                {error && <p>{error.message}</p>}
+                
+                {error && <p id="errorMsg">{error.message}</p>}
             </form>
         );
     }

@@ -1,0 +1,34 @@
+li a {
+    text-decoration: none;
+  }
+  
+ li {
+    display: inline-block;
+    list-style-type: none;
+  }
+  
+ a {
+    color: #000080;
+    text-transform: uppercase;
+    display: block;
+    padding: 0 20px;
+    padding-top: 40px;
+    font-weight: 300;
+    font-family: ff-good-headline-web-pro-condensed;
+    font-style: normal;
+    font-size: 19px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    line-height: 1em;
+    position: relative;
+    z-index: 1;
+
+  }
+a:hover {
+    background: rgba(255,115,77,.4);
+    color: #fff;
+  }
+  
+a:hover:after {
+    transform: translateY(-50%) rotate(-35deg);
+  }

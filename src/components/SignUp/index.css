@@ -1,8 +1,16 @@
-form {
-    margin-top: 100px;
-    margin-left: 100px;
+#signUpForm {
+    margin-top: 120px;
+    margin-left: 45%;
 }
 
 #signUpLink {
     text-align: center;
 }
+
+#signUpBtn {
+    margin-left: 150px;
+}
+
+/* #errorMsg {
+    margin-top: 55px;
+} */
