@@ -9,7 +9,6 @@ import './index.css';
 
 const SignUpPage = () => (
     <div>
-        <h1>Sign Up</h1>
         <SignUpForm />
     </div>
 );
@@ -91,72 +90,95 @@ class SignUpFormBase extends Component {
             username === '';
 
         return (
-            <form onSubmit={this.onSubmit}>
-                <input 
-                    name="username"
-                    value={username}
-                    onChange={this.onChange}
-                    type="text"
-                    placeholder="User Name"
-                />
-                <br/>
-                <input 
-                    name="email"
-                    value={email}
-                    onChange={this.onChange}
-                    type="text"
-                    placeholder="Email Address"
-                />
-                <br/>
-                <input 
-                    name="password"
-                    value={password}
-                    onChange={this.onChange}
-                    type="password"
-                    placeholder="Password"
-                />
-                <br/>
-                <input 
-                    name="passwordConfirm"
-                    value={passwordConfirm}
-                    onChange={this.onChange}
-                    type="password"
-                    placeholder="Confirm Password"
-                />
-                <br/>
-                <label>
-                    Admin:
-                    <input
-                        name="isAdmin"
-                        type="checkbox"
-                        checked={isAdmin}
-                        onChange={this.onChangeCheckbox}
-                    />
-                </label>
-                <br/>
-                <label>
-                    Nonprofit:
-                    <input
-                        name="isNonprofit"
-                        type="checkbox"
-                        checked={isNonprofit}
-                        onChange={this.onChangeCheckbox}
-                    />
-                    {/* <input
-                        name="organization"
-                        value={organization}
-                        onChange={this.organization}
-                        type="text"
-                        placeholder="Name of Organization"
-                    /> */}
-                </label>
-                <br/>
-                <button disabled={isInvalid} type="submit">
-                    Sign Up
-                </button>
+       
+            <div id="signup-box">
 
-                {error && <p>{error.message}</p>}
-            </form>
+            <div className="box">
+                <h1>Sign Up</h1>
+                <br></br>
+
+                <form onSubmit={this.onSubmit}>
+                            <input 
+                                name="username"
+                                value={username}
+                                onChange={this.onChange}
+                                type="text"
+                                placeholder="User Name"
+                            />
+                            <br/>
+                            <input 
+                                name="email"
+                                value={email}
+                                onChange={this.onChange}
+                                type="text"
+                                placeholder="Email Address"
+                            />
+                            <br/>
+                            <input 
+                                name="password"
+                                value={password}
+                                onChange={this.onChange}
+                                type="password"
+                                placeholder="Password"
+                            />
+                            <br/>
+                            <input 
+                                name="passwordConfirm"
+                                value={passwordConfirm}
+                                onChange={this.onChange}
+                                type="password"
+                                placeholder="Confirm Password"
+                            />
+                            <br/>
+                            
+                            <div className="checkbox">
+                            <label>
+                                Admin:
+                                <input
+                                id="checkbox"
+                                    name="isAdmin"
+                                    type="checkbox"
+                                    checked={isAdmin}
+                                    onChange={this.onChangeCheckbox}
+                                />
+                            </label>
+                            </div>
+
+                            <br/>
+                            <div className="checkbox">                            <label>
+                                Nonprofit:
+                                <input
+                                id="checkbox2"
+                                    name="isNonprofit"
+                                    type="checkbox"
+                                    checked={isNonprofit}
+                                    onChange={this.onChangeCheckbox}
+                                />
+                                {/* <input
+                                    name="organization"
+                                    value={organization}
+                                    onChange={this.organization}
+                                    type="text"
+                                    placeholder="Name of Organization"
+                                /> */}
+                            </label>
+                            </div>
+
+                            <br/>
+                            <button className="submit" disabled={isInvalid} type="submit">
+                                Sign Up
+                            </button>
+
+                            {error && <p>{error.message}</p>}
+                        </form>
+
+            
+
+            </div>
+
+            </div>
+
+
         );
     }
 }
