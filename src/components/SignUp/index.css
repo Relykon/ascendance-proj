@@ -1,14 +1,130 @@
-p {
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #FFF;
+  font-size: 16px;
+  color: #222;
+  font-family:  sans-serif;
+  font-weight: 300;
+}
+
+#signup-box {
+  position: relative;
+  margin: 2% auto;
+  width: 800px;
+  height: 500px;
+  background: #FFF;
+  border-radius: 2px;
+}
+
+.right-side {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  box-sizing: border-box;
+  padding: 40px;
+  width: 400px;
+  height: 500px;
+  
+}
+
+h1 {
+  color: #000080;
+  font-family: ff-good-headline-web-pro-condensed;
+  font-style: normal;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: .08em;
+  line-height: 1em;
+  position: relative;
+  margin: 0 0 20px 0;
+  font-weight: 300;
+  font-size: 28px;
+}
+
+input {
+  display: block;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  padding: 4px;
+  width: 220px;
+  height: 32px;
+  border: none;
+  border-bottom: 1px solid #AAA;
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  transition: 0.2s ease;
+  border-radius: 0 2px 2px 0;
+}
+
+::placeholder {
+    color: #0066FF;
+}
+
+
+.submit {
+  margin-top: 28px;
+  margin-bottom: 28px;
+  width: 120px;
+  height: 32px;
+  background: #87CEFA;
+  border: none;
+  border-radius: 2px;
+  color: #FFF;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.1s ease;
+  cursor: pointer;
+  float: center;
+  opacity: 1;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  transition: 0.1s ease;
+  position: absolute;
+  right: 150px;
+}
+
+.submit:hover,
+.submit:focus {
+  opacity: 0.8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: 0.1s ease;
+}
+ 
+.left-side {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  padding: 40px;
+  width: 400px;
+  height: 500px;
+}
+
+.link {
+  margin-top: 50px;
+  float: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* p {
     font-family: sans-serif;
     font-weight: 400;
     font-size: 15px;
     transition: 0.2s ease;
     border-radius: 0 2px 2px 0;
     color: blue;
-}
-
-* {
-    background: #FFF;
 }
 
 body {
@@ -24,15 +140,23 @@ body {
   
   #signup-box {
     position: relative;
+    margin: 5% auto;
+    width: 800px;
+    height: 500px;
+    background: #FFF;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); */
+
+    /* position: relative;
     margin: auto;
     margin-top: 30px;
     width: 900px;
-    height: 700px;
+    height: 700px; */
     /* background: #FFF; */
-    border-radius: 2px;
-    float: left;
+    /* border-radius: 2px;
+    float: center; */
     /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); */
-  }
+  /* }
   
   h1 {
     margin: 0 0 20px 0;
@@ -62,15 +186,15 @@ body {
     font-weight: 400;
     font-size: 15px;
     transition: 0.2s ease;
-    border-radius: 0 4px 4px 0;
-    text-align: left;
-  }
+    border-radius: 0 4px 4px 0; */
+    /* text-align: left; */
+  /* } */
 
-  ::placeholder {
+  /* ::placeholder {
       color: #0066FF;
-  }
+  } */
   
-  .submit {
+  /* .submit {
     margin-top: 28px;
     width: 120px;
     height: 50px;
@@ -96,14 +220,31 @@ body {
     transition: 0.1s ease;
   }
   
-  .box {
+  .left-side {
+    position: absolute;
+    top: 0;
+    left: 0;
     box-sizing: border-box;
+    padding: 40px;
+    width: 400px;
+    height: 500px; */
+    /* box-sizing: border-box;
     padding: 40px;
     width: 400px;
     height: 500px;
     display: inline-block;
     margin-left: auto;
-    margin-right: auto;  
+    margin-right: auto;   */
+  /* } */
+
+  /* .right-side {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    padding: 40px;
+    width: 400px;
+    height: 500px;
   }
 
     p {
@@ -114,9 +255,11 @@ body {
         color: #191970;
     }
 
+    */ 
     label {
-        color: #000080;
+      color: #000080;
     }
+
 
 
 input[type=checkbox] {
@@ -126,7 +269,7 @@ input[type=checkbox] {
 input[type=checkbox] {
   width: 180px;
   height: 20px;
-  /* margin-right: 0px; */
+  margin-right: 0px;
   cursor: pointer;
   font-size: 17px;
   visibility: hidden;

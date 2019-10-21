@@ -93,11 +93,10 @@ class SignUpFormBase extends Component {
        
             <div id="signup-box">
 
-            <div className="box">
+                <form onSubmit={this.onSubmit}>
+                <div className="left-side">
                 <h1>Sign Up</h1>
                 <br></br>
-
-                <form onSubmit={this.onSubmit}>
                             <input 
                                 name="username"
                                 value={username}
@@ -130,7 +129,10 @@ class SignUpFormBase extends Component {
                                 placeholder="Confirm Password"
                             />
                             <br/>
-                            
+                            </div>
+                            <div className="right-side">
+    
+
                             <div className="checkbox">
                             <label>
                                 Admin:
@@ -168,15 +170,20 @@ class SignUpFormBase extends Component {
                             <button className="submit" disabled={isInvalid} type="submit">
                                 Sign Up
                             </button>
+                            </div>
+
+                           
 
                             {error && <p>{error.message}</p>}
                         </form>
 
+                        
+
             
 
-            </div>
+             </div>
 
-            </div>
+           
 
 
         );
