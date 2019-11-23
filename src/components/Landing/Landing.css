@@ -1,44 +1,52 @@
+/* .body {
+  margin: 0;
+} */
+
 .background {
     background-image: url('../../assets/img/ASCEND_WebBanner_5.jpg');
     width: 100%;
-    height: 1000px;
+    height: 500px;
     background-size: cover;
     background-color: #cccccc;
     background-position: center;
-    /* background-origin: content-box; */
+    background-origin: content-box;
     z-index: -1;
-    position: fixed;
+    position: relative;
     background-repeat: no-repeat;
-   }
+  }
 
-   .w3-container {
-       padding: 50px;
-       text-align: center;
-       margin: 100px;
-       padding-top: 150px;
-   }
-
-   h1 {
-    color: rgb(2, 2, 182);
-    text-align: center;
+.w3-container {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
 }
 
-  .button {
-    background-color: rgb(255, 255, 255);
-    border: 2px solid #868585;    
-    color:rgb(25, 63, 235);
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 15px 2px;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: 300;
-    font-family: ff-good-headline-web-pro-condensed;
-    font-style: normal;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    line-height: 1em;   
-  }
+h1 {
+  color: rgb(2, 2, 182);
+  text-align: center;
+}
+
+.button {
+  background-color: rgb(255, 255, 255);
+  border: 2px solid #868585;    
+  color:rgb(25, 63, 235);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 15px 2px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 300;
+  font-family: ff-good-headline-web-pro-condensed;
+  font-style: normal;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  line-height: 1em;   
+}
