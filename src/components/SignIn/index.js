@@ -12,7 +12,7 @@ const SignInPage = () => (
         {/* <h1>SignIn</h1> */}
         <SignInForm />
         <PasswordForgetLink />
-        <br/>
+        <br/><br/>
         <SignUpLink />
     </div>
 );

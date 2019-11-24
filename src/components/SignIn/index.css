@@ -10,7 +10,8 @@ body {
   
   #signin-box {
     position: relative;
-    margin: 10% auto;
+    margin: 5% auto;
+    margin-bottom: 0%;
     width: 600px;
     height: 400px;
     background: #FFF;

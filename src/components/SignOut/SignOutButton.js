@@ -1,4 +1,5 @@
 import React from 'react';
+import './SignOutButton.css';
 
 import { withFirebase } from '../Firebase';
 
