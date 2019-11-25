@@ -110,49 +110,51 @@ class ProjectDetails extends Component {
                 <form onSubmit={this.onSubmit.bind(this)}>
            
                     <div className="input-field">
-                        <input type="text" name="project" ref="project" value={this.state.project} onChange={this.handleInputChange.bind(this)} />
                         <label htmlFor="project">Project</label>
+                        <input type="text" name="project" ref="project" value={this.state.project} onChange={this.handleInputChange.bind(this)} />
                     </div>
 
                     <div className="input-field">
-                        <input type="text" name="desc" ref="desc" value={this.state.desc} onChange={this.handleInputChange.bind(this)}/>
                         <label htmlFor="desc">Description</label>
+                        <input type="text" name="desc" ref="desc" value={this.state.desc} onChange={this.handleInputChange.bind(this)}/>
                     </div>
 
                     <div className="input-field">
-                        <input type="text" name="type" ref="type" value={this.state.type} onChange={this.handleInputChange.bind(this)}/>
                         <label htmlFor="type">type</label>
+                        <input type="text" name="type" ref="type" value={this.state.type} onChange={this.handleInputChange.bind(this)}/>
                     </div>
             
                     <div className="input-field">
+                        <label htmlFor="location">Location</label>
                         <input type="text" name="location" ref="location" value={this.state.location} onChange={this.handleInputChange.bind(this)} />
-                        <label htmlFor="location">location</label>
                     </div>
 
                     <div className="input-field">
+                        <label htmlFor="skillset">Skillset</label>
                         <input type="text" name="skillset" ref="skillset" value={this.state.skillset} onChange={this.handleInputChange.bind(this)}/>
-                        <label htmlFor="skillset">skillset</label>
                     </div>
 
                     <div className="input-field">
+                        <label htmlFor="time">Time</label>
                         <input type="text" name="time" ref="time" value={this.state.time} onChange={this.handleInputChange.bind(this)}/>
-                        <label htmlFor="time">time</label>
                     </div>
 
                     <div className="input-field">
+                        <label htmlFor="requirements">Requirements</label>
                         <input type="text" name="requirements" ref="requirements" value={this.state.requirements} onChange={this.handleInputChange.bind(this)}/>
-                        <label htmlFor="requirements">requirements</label>
                     </div>
 
                     <div className="input-field">
+                        <label htmlFor="training">Training</label>
                         <input type="text" name="training" ref="training" value={this.state.training} onChange={this.handleInputChange.bind(this)}/>
-                        <label htmlFor="training">training</label>
                     </div>
      
-                    <input type="submit" value="Save" className="btn" />
+                    {/* <input type="submit" value="Save" className="btn" /> */}
+                    <button onClick={this.onSubmit.bind(this)} value="Save" className="btn">Save Changes</button>
                 
                 </form>
-                <button onClick={this.onDelete.bind(this)} className="btn grey">Delete</button>
+                <br />
+                <button onClick={this.onDelete.bind(this)} className="btn grey">Delete Project</button>
                         
                 </div>
             </div>

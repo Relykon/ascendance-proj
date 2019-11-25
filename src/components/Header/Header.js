@@ -8,7 +8,7 @@ const Header = () => {
         <nav>
             <div className="Header">        
                 <div href="LandingPage" className="logo">
-                    <img src="//static1.squarespace.com/static/5a342961692ebe0d3d366ef0/t/5cb776d10852292ef64cc35f/1567550363916/?format=1500w" alt="Project Ascendance" class="Header-branding-logo" />
+                    <img src="//static1.squarespace.com/static/5a342961692ebe0d3d366ef0/t/5cb776d10852292ef64cc35f/1567550363916/?format=1500w" alt="Project Ascendance"/>
                 </div>
 
                 <Navigation id="nav-mobile" className="menu"/>
