@@ -32,39 +32,43 @@ class SignUpFormBase extends Component {
         this.state = { ...INITIAL_STATE };
     }
 
-    onSubmit = event => {
+    handleSubmit = event => {
         const { username, email, password, isAdmin, isNonprofit, isVolunteer } = this.state;
         const roles = {};
-    
+        let Route = '';
+
         if (isAdmin) {
             roles[ROLES.ADMIN] = ROLES.ADMIN;
+            Route = ROUTES.ADMIN;
         }
         if (isNonprofit) {
             roles[ROLES.NONPROFIT] = ROLES.NONPROFIT;
+            Route = ROUTES.NONPROFIT_FORM;
+
         }
         if (isVolunteer) {
             roles[ROLES.VOLUNTEER] = ROLES.VOLUNTEER;
+            Route = ROUTES.VOLUNTEER_FORM;
         }
 
         this.props.firebase
             .doCreateUserWithEmailAndPassword(email, password)
             .then(authUser => {
-               return this.props.firebase
-                .user(authUser.user.uid)
-                .set({
-                    username,
-                    email,
-                    roles
-                });
+                return this.props.firebase
+                    .user(authUser.user.uid)
+                    .set({
+                        username,
+                        email,
+                        roles
+                    });
             })
             .then(() => {
                 this.setState({ ...INITIAL_STATE });
-                this.props.history.push(ROUTES.HOME);
+                this.props.history.push(Route);
             })
             .catch(error => {
                 this.setState({ error });
             });
-            
         event.preventDefault();
     };
 
