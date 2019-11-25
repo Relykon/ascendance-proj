@@ -43,12 +43,12 @@ class SignUpFormBase extends Component {
         }
         if (isNonprofit) {
             roles[ROLES.NONPROFIT] = ROLES.NONPROFIT;
-            // Route = ROUTES.NONPROFIT_FORM;
+            Route = ROUTES.NONPROFIT_FORM;
 
         }
         if (isVolunteer) {
             roles[ROLES.VOLUNTEER] = ROLES.VOLUNTEER;
-            // Route = ROUTES.VOLUNTEER_FORM;
+            Route = ROUTES.VOLUNTEER_FORM;
         }
 
         this.props.firebase
