@@ -40,9 +40,9 @@ class ProjectItem extends Component {
                         top: 0;
                     }
 
-                    .card-title h2 {
+                    .card-title h4 {
                         margin: 0;
-                        padding-top: 5%;
+                        // padding-top: 5%;
                         color: #2196F3;
                         font-family: 'Oswald', sans-serif;
                         text-transform: uppercase;
@@ -68,14 +68,15 @@ class ProjectItem extends Component {
                                         <div className="note" key={project.id}>
                                             <div className="project-list">
                                                 <h4>{project.project}</h4>   
-                                                <p>Project Description: {project.desc}</p> 
-                                                <p>Type of Project: {project.type}</p>
-                                                <p>Location: {project.location}</p>
-                                                <p>Skillsets Required: {project.skillset}</p> 
-                                                <p>Time Commitment Required: {project.time}</p>
-                                                <p>Requirements: {project.requirements}</p> 
-                                                <p>Training Required: {project.training}</p>
+                                                <p><b>Project Description:</b> {project.desc}</p> 
+                                                <p><b>Type of Project:</b> {project.type}</p>
+                                                <p><b>Location:</b> {project.location}</p>
+                                                <p><b>Skillsets Required:</b> {project.skillset}</p> 
+                                                <p><b>Time Commitment Required:</b> {project.time}</p>
+                                                <p><b>Requirements:</b> {project.requirements}</p> 
+                                                <p><b>Training Required:</b> {project.training}</p>
                                                 <Link to={`/projectDetails/${project.id}`}> Edit/Delete</Link>
+                                                <hr/><br/>
                                             </div>
                                         </div>
                                     ))}                 

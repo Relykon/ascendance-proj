@@ -86,23 +86,22 @@ class ProjectCreateFormBase extends Component{
       <form onSubmit={this.onSubmit}>
         <p>Project title</p>
           <input
-          type="text"
-          name="project"
-          value={project}
-          onChange={this.onChange}
-          />
+            type="text"
+            name="project"
+            value={project}
+            onChange={this.onChange}
+            />
 
         <p>Project Description</p>
           <textarea
-          name="desc"
-          value={desc}
-          onChange={this.onChange}
-          onKeyUp={this.doReSize}
-          cols="20"
-          rows="1"
-          >
-          </textarea>
-
+            name="desc"
+            value={desc}
+            onChange={this.onChange}
+            onKeyUp={this.doReSize}
+            cols="20"
+            rows="1"
+            />
+        <br /> <br /> 
         <p>Type of Project</p>
           <select name="type" value={type} onChange={this.onChange}>
             <option>Clerical/Administrative</option>
@@ -115,7 +114,7 @@ class ProjectCreateFormBase extends Component{
             <option>Technological support</option>
             <option>Specific events</option>
           </select>
-
+        <br /> <br /> 
         <p>Location</p>
           <input
           type="text"
@@ -136,7 +135,7 @@ class ProjectCreateFormBase extends Component{
             <option>Outreach</option>
             <option>Programming</option>
           </select>
-
+        <br /> <br /> 
         <p>Time Commitment Required</p>
           <select name="time" value={time} onChange={this.onChange}>
             <option>Once</option>
@@ -145,7 +144,7 @@ class ProjectCreateFormBase extends Component{
             <option>Weekly</option>
             <option>Monthly</option>
           </select>
-
+        <br /> <br /> 
         <p>Requirements</p>
           <input
           type="text"
