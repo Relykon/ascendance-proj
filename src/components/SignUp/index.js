@@ -32,6 +32,14 @@ class SignUpFormBase extends Component {
         this.state = { ...INITIAL_STATE };
     }
 
+    handleChange = event => {
+        this.setState({ [event.target.name]: event.target.value });
+    };
+
+    handleChangeCheckbox = event => {
+        this.setState({ [event.target.name]: event.target.checked });
+    };
+
     handleSubmit = event => {
         const { username, email, password, isAdmin, isNonprofit, isVolunteer } = this.state;
         const roles = {};
@@ -72,14 +80,6 @@ class SignUpFormBase extends Component {
         event.preventDefault();
     };
 
-    onChange = event => {
-        this.setState({ [event.target.name]: event.target.value });
-    };
-
-    onChangeCheckbox = event => {
-        this.setState({ [event.target.name]: event.target.checked });
-    };
-
     render() {
         const {
             username,
@@ -104,11 +104,11 @@ class SignUpFormBase extends Component {
 
 
         return (
-            <form id="signUpForm" onSubmit={this.onSubmit}>
+            <form id="signUpForm" onSubmit={this.handleSubmit}>
                 <input 
                     name="username"
                     value={username}
-                    onChange={this.onChange}
+                    onChange={this.handleChange}
                     type="text"
                     placeholder="User Name"
                 />
@@ -116,7 +116,7 @@ class SignUpFormBase extends Component {
                 <input 
                     name="email"
                     value={email}
-                    onChange={this.onChange}
+                    onChange={this.handleChange}
                     type="text"
                     placeholder="Email Address"
                 />
@@ -124,7 +124,7 @@ class SignUpFormBase extends Component {
                 <input 
                     name="password"
                     value={password}
-                    onChange={this.onChange}
+                    onChange={this.handleChange}
                     type="password"
                     placeholder="Password"
                 />
@@ -132,7 +132,7 @@ class SignUpFormBase extends Component {
                 <input 
                     name="passwordConfirm"
                     value={passwordConfirm}
-                    onChange={this.onChange}
+                    onChange={this.handleChange}
                     type="password"
                     placeholder="Confirm Password"
                 />
@@ -143,7 +143,7 @@ class SignUpFormBase extends Component {
                         name="isAdmin"
                         type="checkbox"
                         checked={isAdmin}
-                        onChange={this.onChangeCheckbox}
+                        onChange={this.handleChangeCheckbox}
                     />
                 </label> */}
                 {/* <br /> */}
@@ -153,7 +153,7 @@ class SignUpFormBase extends Component {
                         name="isVolunteer"
                         type="checkbox"
                         checked={isVolunteer}
-                        onChange={this.onChangeCheckbox}
+                        onChange={this.handleChangeCheckbox}
                     />
                 </label>
                 {/* <br/> */}
@@ -163,15 +163,8 @@ class SignUpFormBase extends Component {
                         name="isNonprofit"
                         type="checkbox"
                         checked={isNonprofit}
-                        onChange={this.onChangeCheckbox}
+                        onChange={this.handleChangeCheckbox}
                     />
-                    {/* <input
-                        name="organization"
-                        value={organization}
-                        onChange={this.organization}
-                        type="text"
-                        placeholder="Name of Organization"
-                    /> */}
                 </label>
                 <br/>
                 <button id="signUpBtn" disabled={isInvalid} type="submit">

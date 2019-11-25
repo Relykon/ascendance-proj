@@ -11,6 +11,7 @@ import * as ROUTES from '../../constants/Routes';
 const NonprofitSignUpPage = () => (
     <div>
         <h2>Nonprofit Sign Up Continued</h2>
+        <br/>
         <NonprofitForm />
     </div>
 )
@@ -139,6 +140,7 @@ class NonprofitFormBase extends React.Component {
                 </label>
                 <label>
                     Category:
+                    <br/>
                     <select name="category" value={category} onChange={this.handleChange} placeholder="Category of Nonprofit">
                         <option>Arts, Culture, Humanities</option>
                         <option>Community Development</option>
@@ -152,6 +154,7 @@ class NonprofitFormBase extends React.Component {
                         <option>Research and Public Policy</option>
                     </select>
                 </label>
+                <br/><br/>
                 <label>
                     Cause:
                     <input

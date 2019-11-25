@@ -24,6 +24,10 @@ class PasswordForgetFormBase extends Component {
         this.state = { ...INITIAL_STATE };
     }
 
+    handleChange = event =>  {
+        this.setState({ [event.target.name]: event.target.value });
+    };
+    
     handleSubmit = event => {
         const { email } = this.state;
 
@@ -37,10 +41,6 @@ class PasswordForgetFormBase extends Component {
             });
 
             event.preventDefault();
-    };
-
-    handleChange = event =>  {
-        this.setState({ [event.target.name]: event.target.value });
     };
 
     render() {
