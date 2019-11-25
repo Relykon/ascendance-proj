@@ -186,8 +186,6 @@ const SignUpLink = () => (
     </p>
 );
 
-// const SignUpForm = withRouter(withFirebase(SignUpFormBase));
-// ^ same as below (supposed to be less verbose....?)
 const SignUpForm = compose(
     withRouter,
     withFirebase,
