@@ -9,5 +9,5 @@ export const PROJECT_CREATE = '/proj-form';
 export const PROJECTS = '/projects';
 export const PROJECT_PREVIEW = '/projectPreview/:id';
 export const PROJECT_DETAILS = '/projectDetails/:id';
-export const NONPROFIT_FORM = '/';
-export const VOLUNTEER_FORM = '/';
+export const NONPROFIT_FORM = '/signup-nonprofit';
+export const VOLUNTEER_FORM = '/signup-volunteer';
