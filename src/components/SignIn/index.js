@@ -5,6 +5,7 @@ import { compose } from 'recompose';
 import { SignUpLink } from '../SignUp';
 import { PasswordForgetLink } from '../PasswordForget/PasswordForget';
 import { withFirebase } from '../Firebase';
+import * as ROUTES from '../../constants/Routes';
 import './index.css';
 
 const SignInPage = () => (
@@ -29,13 +30,18 @@ class SignInFormBase extends Component {
         this.state = { ...INITIAL_STATE};
     }
 
-    onSubmit = event => {
+    handleChange = event => {
+        this.setState({ [event.target.name]: event.target.value });
+    };
+
+    handleSubmit = event => {
         const { email, password } = this.state;
 
         this.props.firebase
             .doSignInWithEmailAndPassword(email, password)
             .then(() => {
                 this.setState({ ...INITIAL_STATE });
+                this.props.history.push(ROUTES.HOME);
             })
             .catch(error => {
                 this.setState({ error });
@@ -43,10 +49,6 @@ class SignInFormBase extends Component {
 
         event.preventDefault();
     }
-
-    onChange = event => {
-        this.setState({ [event.target.name]: event.target.value });
-    };
 
     render() {
         const { email, password, error } = this.state;
@@ -58,18 +60,18 @@ class SignInFormBase extends Component {
             <div id="signin-box">
                 <div className="right">
                     <h1>Sign In</h1>
-                    <form onSubmit={this.onSubmit}>
+                    <form onSubmit={this.handleSubmit}>
                         <input
                             name="email"
                             value={email}
-                            onChange={this.onChange}
+                            onChange={this.handleChange}
                             type="text"
                             placeholder="Email Address"
                         />
                         <input
                             name="password"
                             value={password}
-                            onChange={this.onChange}
+                            onChange={this.handleChange}
                             type="password"
                             placeholder="Password"
                         />
