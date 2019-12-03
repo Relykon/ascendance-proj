@@ -4,6 +4,8 @@ import { PasswordForgetForm } from '../PasswordForget/PasswordForget';
 import PasswordChangeForm from '../PasswordChange/PasswordChange';
 import { AuthUserContext, withAuthorization } from '../Session';
 
+import { NonprofitFormLink } from '../SignUp/NonprofitForm';
+
 const AccountPage = () => (
     <AuthUserContext.Consumer>
         {authUser => (
@@ -12,6 +14,8 @@ const AccountPage = () => (
                 <PasswordForgetForm />
                 <br /> <br />
                 <PasswordChangeForm />
+                <br /> <br />
+                <NonprofitFormLink />
             </div>
         )}
     </AuthUserContext.Consumer>

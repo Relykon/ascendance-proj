@@ -1,20 +1,26 @@
 import React from 'react';
 import { compose } from 'recompose';
+import { Link } from 'react-router-dom';
 
 import { withFirebase } from '../Firebase';
-import { withAuthorization } from '../Session';
+import { withAuthorization, AuthUserContext } from '../Session';
 import axios from 'axios';
 
 import * as ROLES from '../../constants/Roles';
 import * as ROUTES from '../../constants/Routes';
 
 const NonprofitSignUpPage = () => (
-    <div>
-        <h2>Nonprofit Sign Up Continued</h2>
-        <br/>
-        <NonprofitForm />
-    </div>
-)
+    <AuthUserContext.Consumer>
+        {authUser => (
+            <div>
+                <h2>Nonprofit Sign Up Continued</h2>
+                <h5>Account:{authUser.email}</h5>
+                <br />
+                <NonprofitForm />
+            </div>
+        )}
+    </AuthUserContext.Consumer>
+);
 
 const INITIAL_STATE = {
     user: '',
@@ -33,13 +39,15 @@ class NonprofitFormBase extends React.Component {
         this.state = { ...INITIAL_STATE };
     }
 
-    componentDidMount() {
+    componentWillMount() {
         this.getUserDetails();
     }
 
     getUserDetails() {
         let userId = this.props.match.params.id
-        console.log(userId);
+        let params = this.props.match.params
+        console.log("id", userId);
+        console.log("params", params);
         axios.get(`https://project-ascendance.firebaseio.com/users/${userId}.json`)
             .then(response => {
                 this.setState({
@@ -70,6 +78,10 @@ class NonprofitFormBase extends React.Component {
             .catch(err => console.log(err));
     }
 
+    handleChange = event => {
+        this.setState({ [event.target.name]: event.target.value });
+    }
+
     handleSubmit(event) {
         const updatedUser = {
             user: this.refs.user.value,
@@ -82,10 +94,6 @@ class NonprofitFormBase extends React.Component {
         }
         this.updateUser(updatedUser);
         event.preventDefault();
-    }
-
-    handleChange = event => {
-        this.setState({ [event.target.name]: event.target.value });
     }
 
     // handleSubmit = event => {
@@ -173,6 +181,12 @@ class NonprofitFormBase extends React.Component {
     };
 }
 
+const NonprofitFormLink = () => (
+    <p id='nonprofitFormLink'>
+        Update Nonprofit Info:<br /> <Link to={ROUTES.NONPROFIT_FORM}>View Info</Link>
+    </p>
+);
+
 const condition = authUser =>
     authUser && !!authUser.roles[ROLES.NONPROFIT];
 
@@ -182,5 +196,4 @@ const NonprofitForm = compose(
 )(NonprofitFormBase)
 
 export default NonprofitSignUpPage;
-
-export { NonprofitForm };
+export { NonprofitForm, NonprofitFormLink };

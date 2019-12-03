@@ -27,7 +27,9 @@ class ProjectDetails extends Component {
 
     getProjectDetails(){
         let projectId = this.props.match.params.id
-        console.log("id", projectId)
+        let params = this.props.match.params
+        console.log("projectId", projectId)
+        console.log("params", params);
         axios.get(`https://project-ascendance.firebaseio.com/projects/${projectId}.json`)
         .then(response => { 
             this.setState({
