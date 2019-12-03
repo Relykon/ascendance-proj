@@ -1,10 +1,9 @@
 Next steps:
 
-1. During SignUp: Create a control(?) for is a user signs up as a NP, or Volunteer then render something diff for each
+1. During SignUp: After a user enters email and password and selects their role(Nonprofit or Volunteer), then render something diff for each
+    - if a Nonprofit
     - if a volunteer, choose between individual or group
         - multiple types of group options
-<!-- 2. ProjectCreation - ProjectForm:
-    - assign IDs to project -->
 2. Conditionally render Home Page depending on user Roles
     - if Role = Nonprofit (render):
         - navigation options:
@@ -27,10 +26,7 @@ Next steps:
             - event types
             - time commitment
 3. map projects in Project component
-
-
-Other To do:
-
-1. in ProjectDetails comp: 
-    - onDelete() + editProject() + getProjectDetails() - should this reside in firebase component?
+    - make sure a nonprofit can access (for editing/deleting) only projects they created
+    - determing how projects are shown to volunteers
+        -search parameters?
     
